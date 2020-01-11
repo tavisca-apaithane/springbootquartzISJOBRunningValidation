@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	compile 'postgresql:postgresql:9.1-901-1.jdbc4'
+	compile 'org.springframework.data:spring-data-jpa:2.2.3.RELEASE'
+	compile 'org.springframework:spring-context-support:5.2.2.RELEASE'
+	compile 'org.springframework:spring-context:5.2.2.RELEASE'
+	compile 'org.springframework.boot:spring-boot-autoconfigure:2.2.2.RELEASE'
+	compile 'org.springframework:spring-tx:5.2.2.RELEASE'
+	compile 'org.postgresql:postgresql:42.2.9.jre6'
+	compile 'org.hibernate.orm:hibernate-core:6.0.0.Alpha4'
+	compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final'
+	compile 'org.springframework:spring-core:5.2.2.RELEASE'
+	compile 'c3p0:c3p0:0.9.1.2'
+}
+
+test {
+	useJUnitPlatform()
+}
